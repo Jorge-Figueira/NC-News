@@ -1,14 +1,25 @@
+import Header from './componets/Header';
+import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom'
+import HomePage from './componets/HomePage';
+import "./App.css"
+
+
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="NC-News">
-        <h1>NC-News</h1>
-       
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+            <div className="App">
+            <Header />
+              <Routes>
+                  <Route path="/" element={<HomePage/>} />
+                  
+              </Routes>
+            </div>
+        </BrowserRouter>
+    
+  )
 }
 
 export default App;
