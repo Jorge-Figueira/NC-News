@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.article__card {
+  background-color: beige;
+  margin: 4px;
+}
+
+.descriptors {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.descriptor_item {
+  margin: 20px;
+}
