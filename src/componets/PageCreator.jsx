@@ -5,7 +5,7 @@ import { useState } from "react";
 
 //create a toguel switch to change order from ascending to descending
 
-export default function HomePage () {
+export default function PageCreator () {
     const [sortby, setSortBy] = useState(undefined)
     const [order, setOrder] = useState('desc')
     

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import * as api from "../api";
 
 export default function TopicsList() {
@@ -17,7 +18,7 @@ export default function TopicsList() {
       
     topics.map((topic) => {
 
-        return <option key = {topic} value= {topic}>{topic}</option>
+        return <Link key = {topic} className = 'topic_link' to= {`/topics/${topic}`}>{topic}</Link>
     })
    
   )

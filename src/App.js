@@ -1,6 +1,6 @@
 import Header from './componets/Header';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import HomePage from './componets/HomePage';
+import PageCreator from './componets/PageCreator';
 import "./App.css"
 
 
@@ -14,8 +14,8 @@ function App() {
             <div className="App">
             <Header />
               <Routes>
-                  <Route path="/" element={<HomePage />} />
-                  <Route path="/topics/:topic" element={<HomePage/> } />
+                  <Route path="/" element={<PageCreator />} />
+                  <Route path="/topics/:topic" element={<PageCreator/> } />
               </Routes>
             </div>
         </BrowserRouter>
