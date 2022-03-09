@@ -45,9 +45,15 @@
 .descriptors {
   display: flex;
   flex-direction: row;
-  align-items: baseline;
+  align-items: center;
+  justify-content: center;
 }
 
 .descriptor_item {
-  margin: 20px;
+  margin: 10px;
+  font-size: 10px;
+}
+
+.topic_link {
+  margin: 5px;
 }
