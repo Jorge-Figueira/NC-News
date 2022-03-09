@@ -2,22 +2,24 @@ import { useEffect, useState } from "react";
 import * as api from "../api";
 
 export default function TopicsList() {
-  const [topics, setTopic] = useState([]);
+  const [topics, setTopics] = useState([]);
  
   useEffect(() => {
-    api.fetchCategories().then(( {categories: categoriesList} ) => {
-      console.log (categoriesList, "categories in categories list");
-      setCategories(categoriesList);
+    api.fetchTopics().then(( queriedTopics ) => {
+         setTopics(queriedTopics.map((topic) => topic.slug))
+     
+    
     });
   }, []);
-
+  
 
   return (
       
-    categories.map(({category_name}) => {
+    topics.map((topic) => {
 
-        return <CategoriesCard category_name = {category_name}/>
+        return <option key = {topic} value= {topic}>{topic}</option>
     })
    
   )
- }
+ 
+}
