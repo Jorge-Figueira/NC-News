@@ -1,8 +1,10 @@
-export default function  ArticleCard ({title, topic,  author,  votes, comment_count, date} ) {
+import { useNavigate } from "react-router-dom";
+export default function  ArticleCard ({title, topic,  author,  votes, comment_count, date, article_id} ) {
+  const navigate = useNavigate()
     const usefulDate = date.slice(0,10);
         return (
-            <article className = "article__card">
-        <h3>{title}</h3>
+            <article className = "article__card"onClick= {() => {navigate(`/articles/${article_id}`)}} >
+        <h3 >{title}</h3>
         <section className = 'descriptors'>
           <p className = 'descriptor_item'>Topic: {topic}</p>
           <p className = 'descriptor_item'>Author: {author}</p>

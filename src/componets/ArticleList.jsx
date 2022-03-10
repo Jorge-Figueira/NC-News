@@ -22,7 +22,7 @@ import {useState, useEffect} from 'react'
     return ( <section>
                 
                 {articles.map(({article_id, title, topic,author, votes, comment_count, created_at}) => {
-                    return   <ArticleCard  key = {article_id} title= {title} topic = {topic} author = {author} votes= {votes} comment_count = {comment_count} date = {created_at}/>
+                    return   <ArticleCard  key = {article_id} article_id = {article_id} title= {title} topic = {topic} author = {author} votes= {votes} comment_count = {comment_count} date = {created_at}/>
                 })}
                 
             </section>
