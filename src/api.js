@@ -14,7 +14,18 @@ export function fetchArticles (topic, sortby, order) {
 
 export function fetchTopics () {
     return nc_news.get("/topics").then((res) => {
-        console.log(res.data.topics, "<<<<topics at fetchTopics")
         return res.data.topics;
+    })
+}
+
+export function fetchArticleById (article_id) {
+    return nc_news.get(`/articles/${article_id}`).then((res) => {
+        return res.data.article;
+    })
+}
+
+export function fetchCommentsByArticle (article_id) {
+    return nc_news.get(`/articles/${article_id}/comments`).then((res) => {
+        return res.data.comments;
     })
 }
