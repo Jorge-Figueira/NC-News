@@ -57,3 +57,13 @@
 .topic_link {
   margin: 5px;
 }
+
+.comments_list {
+  background-color: aquamarine;
+  padding: 5px;
+}
+.comment__card {
+  background-color: rgb(140, 216, 209);
+  margin: 4px;
+  font-size: 12px;
+}
