@@ -29,3 +29,12 @@ export function fetchCommentsByArticle (article_id) {
         return res.data.comments;
     })
 }
+
+export function updateVotes (article_id, voteUpdate) {
+    return nc_news.patch(`/articles/${article_id}`, voteUpdate).then((res)=> {
+        return res.data;
+    }).catch((error) => {   
+        return error
+    })
+
+}

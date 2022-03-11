@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import ArticleBody from "./ArticleBody";
 import CommentsList from "./CommentsList"
-import * as api from "../api"
+import * as api from "../../api"
 
 
 export default function SingleArticle () {
