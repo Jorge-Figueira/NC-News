@@ -16,7 +16,7 @@ function App() {
     <BrowserRouter>
     <UserContext.Provider value = {{user, setUser}}>
             <div className="App">
-            <Link to= "/user"><p>Log in</p></Link>
+            <Link to= "/user"><p>{user === ""? "Log in": `User: ${user}`}</p></Link>
             <Header />
               <Routes>
                 

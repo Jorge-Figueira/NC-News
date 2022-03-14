@@ -4,18 +4,18 @@ import {useState, useEffect} from 'react'
 
 export default function  ArticleBody ({article}) {
     const [vote, setVote] = useState(0);
-   const [like, setLike] = useState(false);
-   const [dislike, setDislike] = useState(false);
-   const [renderVote, setRenderVote] = useState(article.votes)
+    const [likeTracker, setLikeTracker] = useState([false,false])
+    const [renderVote, setRenderVote] = useState(article.votes)
 
     useEffect(() => {
         const voteUpdate = {inc_votes: vote}
-        setRenderVote((currentVote) => {return currentVote + vote})
+        setRenderVote((currentVote) => {
+            return currentVote + vote})
         api.updateVotes(article.article_id, voteUpdate ).then((item) =>{
             
         })
-    },[vote])
-
+    },[likeTracker])
+console.log(vote, "<<<<<vote")
     
     return (
         <article className= "article__card">
@@ -28,33 +28,32 @@ export default function  ArticleBody ({article}) {
                 <p className = 'descriptor_item'>Comments: {article.comment_count}</p>
                 <p className = 'descriptor_item'>Date: {article.created_at.slice(0,10)}</p>
                  <button onClick={() => {
-                    if (like === false)  {
-                        if (dislike ===false) {
+                    if (likeTracker[0] === false)  {
+                        if (likeTracker[1] ===false) {
+                            
                             setVote(1);
-                            setLike(true)
+                            setLikeTracker([true,false])
                         }else {
                             setVote(2);
-                            setLike(true);
-                            setDislike(false)
+                            setLikeTracker([true, false])
                         }
                     } else{
                         setVote(-1);
-                        setLike(false)
+                        setLikeTracker([false, false])
                     }
                 }}>Like</button>
                 <button onClick={() => {
-                    if (dislike === false) {
-                        if (like === true) {
+                    if (likeTracker[1] === false) {
+                        if (likeTracker[0] === true) {
                             setVote(-2);
-                            setLike(false);
-                            setDislike(true)
+                            setLikeTracker([false,true])
                         } else {
                             setVote(-1);
-                            setDislike(true)
+                            setLikeTracker([false,true])
                         }
                     } else {
                         setVote(1);
-                        setDislike(false)
+                        setLikeTracker([false,false])
                     }
                 }}>Dislike</button>
               
