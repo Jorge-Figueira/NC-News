@@ -67,3 +67,12 @@
   margin: 4px;
   font-size: 12px;
 }
+.comment_section {
+  background-color: rgb(187, 127, 255);
+  padding: 5px;
+}
+.comment_stage {
+  background-color: rgb(199, 118, 188);
+  margin: 4px;
+  font-size: 12px;
+}
