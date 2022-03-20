@@ -1,11 +1,12 @@
-import Header from "./componets/Header";
+import Header from "./componets/MainPage/Header";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import PageCreator from "./componets/PageCreator";
+import PageCreator from "./componets/MainPage/PageCreator";
 import SingleArticle from "./componets/SingleArticle/SingleArticle";
 import User from "./componets/User/User";
 import "./App.css";
 import { UserContext } from "./componets/User/UserContext";
 import { useState } from "react";
+import ErrorPage from "./componets/ErrorPage/ErrorPage";
 
 function App() {
   const [user, setUser] = useState("");
@@ -23,6 +24,7 @@ function App() {
             <Route path="/topics/:topic" element={<PageCreator />} />
             <Route path="/articles/:article_id" element={<SingleArticle />} />
             <Route path="/user" element={<User />} />
+            <Route path="*" element={<ErrorPage />} />
           </Routes>
         </div>
       </UserContext.Provider>
