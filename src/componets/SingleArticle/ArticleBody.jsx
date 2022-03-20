@@ -13,7 +13,6 @@ export default function ArticleBody({ article }) {
     });
     api.updateVotes(article.article_id, voteUpdate).then((item) => {});
   }, [likeTracker, article.article_id, vote]);
-  console.log(vote, "<<<<<vote");
 
   return (
     <article className="article__card">

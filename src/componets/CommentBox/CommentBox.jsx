@@ -8,8 +8,6 @@ export default function CommentBox({ article_id }) {
   const [comment, setComment] = useState("");
   const [params, setParams] = useState(false);
   const [sent, setSent] = useState(false);
-  console.log(params, "<<<<params");
-  console.log(comment, "<<< comment commentbox");
 
   useEffect(() => {}, [params, sent]);
   return (
