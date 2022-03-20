@@ -50,12 +50,13 @@ export function checkUsers() {
 }
 
 export function postComment(params, article_id) {
-  console.log(params, "params in api");
-  console.log(article_id, "<<<<article_id");
   return nc_news
     .post(`/articles/${article_id}/comments`, params)
     .then((res) => {
-      console.log(res, "<<<<<res in api");
       return null;
     });
+}
+
+export function deleteComment(comment_id) {
+  return nc_news.delete(`/comments/${comment_id}`).then((res) => {});
 }
