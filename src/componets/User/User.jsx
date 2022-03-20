@@ -5,11 +5,8 @@ import * as api from "../../api";
 
 export default function User() {
   const [imputUser, setImputUser] = useState("");
-  console.log(imputUser, "<<<<imputuser   ");
   const { setUser, user } = useContext(UserContext);
-  console.log(user, "<<<<<user");
   const [users, setUsers] = useState([]);
-  console.log(users, "users");
   const [notUserMessage, setNotUserMessage] = useState("");
   const navigate = useNavigate();
 
