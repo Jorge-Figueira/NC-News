@@ -6,36 +6,13 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 @font-face {
   font-family: myfont;
-  src: url(../rough_typewriter.otf);
-}
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  src: url(./Icons_and_fonts/rough_typewriter.otf);
 }
 
 .App-header {
-  font-family: myfont;
   font-size: calc(10px + 2vmin);
-}
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 .articles_List {
@@ -45,9 +22,7 @@
 
 .article__card {
   transform-style: preserve-3d;
-  border-radius: 32px;
-  box-shadow: 1px 1px 0 1px #070725, -1px 0 28px 0 rgba(34, 33, 81, 0.01),
-    28px 28px 28px 0 rgba(34, 33, 81, 0.25);
+
   transition: 0.2s ease-in-out transform, 0.4s ease-in-out box-shadow;
 
   flex-grow: 1;
@@ -60,8 +35,6 @@
 }
 .article__card:hover {
   transform: translate3d(0px, -5px, 0px) rotateX(0deg) rotateZ(0deg);
-  box-shadow: 1px 1px 0 1px #03031f, -1px 0 28px 0 rgba(96, 96, 114, 0.01),
-    54px 54px 28px -10px rgba(34, 33, 81, 0.15);
 }
 
 .descriptors {
@@ -78,7 +51,12 @@
 }
 
 .topic_link {
+  transform-style: preserve-3d;
+  transition: 0.1s ease-in-out transform, 0.1s ease-in-out box-shadow;
   margin: 5px;
+}
+.topic_link:hover {
+  transform: translate3d(0px, -5px, 0px) rotateX(0deg) rotateZ(0deg);
 }
 
 .comments_list {
@@ -107,4 +85,9 @@ h3 {
 .article_Body {
   line-height: 2vw;
   font-size: 1.5vw;
+}
+.like_icons {
+  height: 2.5vw;
+  width: 2.5vw;
+  padding: 0.6vw;
 }

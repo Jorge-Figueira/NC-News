@@ -1,5 +1,9 @@
 import * as api from "../../api";
 import { useState, useEffect } from "react";
+import like from "../../Icons_and_fonts/like.png";
+import likeHover from "../../Icons_and_fonts/like-hover.png";
+import unlike from "../../Icons_and_fonts/unlike.png";
+import unlikeHover from "../../Icons_and_fonts/unlike-hover.png";
 
 export default function ArticleBody({ article }) {
   const [vote, setVote] = useState(0);
@@ -26,7 +30,26 @@ export default function ArticleBody({ article }) {
         <p className="descriptor_item">
           Date: {article.created_at.slice(0, 10)}
         </p>
-        <button
+        <img
+          className="like_icons"
+          src={likeTracker[0] === false ? like : likeHover}
+          alt="like icon"
+          onClick={() => {
+            if (likeTracker[0] === false) {
+              if (likeTracker[1] === false) {
+                setVote(1);
+                setLikeTracker([true, false]);
+              } else {
+                setVote(2);
+                setLikeTracker([true, false]);
+              }
+            } else {
+              setVote(-1);
+              setLikeTracker([false, false]);
+            }
+          }}
+        />
+        {/* <button
           onClick={() => {
             if (likeTracker[0] === false) {
               if (likeTracker[1] === false) {
@@ -43,8 +66,27 @@ export default function ArticleBody({ article }) {
           }}
         >
           Like
-        </button>
-        <button
+        </button> */}
+        <img
+          className="like_icons"
+          src={likeTracker[1] === false ? unlike : unlikeHover}
+          alt="like icon"
+          onClick={() => {
+            if (likeTracker[1] === false) {
+              if (likeTracker[0] === true) {
+                setVote(-2);
+                setLikeTracker([false, true]);
+              } else {
+                setVote(-1);
+                setLikeTracker([false, true]);
+              }
+            } else {
+              setVote(1);
+              setLikeTracker([false, false]);
+            }
+          }}
+        />
+        {/* <button
           onClick={() => {
             if (likeTracker[1] === false) {
               if (likeTracker[0] === true) {
@@ -61,7 +103,7 @@ export default function ArticleBody({ article }) {
           }}
         >
           Dislike
-        </button>
+        </button> */}
       </section>
     </article>
   );
