@@ -17,7 +17,7 @@ export default function ArticleBody({ article }) {
   return (
     <article className="article__card">
       <h3>{article.title}</h3>
-      <p>{article.body}</p>
+      <p className="article_Body">{article.body}</p>
       <section className="descriptors">
         <p className="descriptor_item">Topic: {article.topic}</p>
         <p className="descriptor_item">Author: {article.author}</p>

@@ -2,7 +2,6 @@ import * as api from "../../api";
 import ArticleCard from "./ArticleCard";
 import { useState, useEffect } from "react";
 
-// export default function ArticleList ({ chosenTopic, sort_by, order}) {
 export default function ArticleList({ topic, sortby, order }) {
   const [articles, setArticles] = useState([]);
 
@@ -17,7 +16,7 @@ export default function ArticleList({ topic, sortby, order }) {
 
   if (loading === true) return <p> Loading..</p>;
   return (
-    <section>
+    <section className="articles_List">
       {articles.map(
         ({
           article_id,

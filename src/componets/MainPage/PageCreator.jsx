@@ -3,8 +3,6 @@ import Selector from "./Selector";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 
-//create a toguel switch to change order from ascending to descending
-
 export default function PageCreator() {
   const [sortby, setSortBy] = useState(undefined);
   const [order, setOrder] = useState("desc");
@@ -12,7 +10,7 @@ export default function PageCreator() {
   const { topic } = useParams();
 
   return (
-    <>
+    <section className="pageCreator">
       <Selector
         sortby={sortby}
         setSortBy={setSortBy}
@@ -20,6 +18,6 @@ export default function PageCreator() {
         setOrder={setOrder}
       />
       <ArticleList topic={topic} sortby={sortby} order={order} />
-    </>
+    </section>
   );
 }

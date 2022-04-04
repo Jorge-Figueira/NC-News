@@ -22,7 +22,7 @@ export default function Selector({ setSortBy, sortBy, order, setOrder }) {
         <option value="author">author</option>
 
         <option value="votes">votes</option>
-        {/* <option value="comment_count">comments</option>  <<<<<<<This option needs work on the back end as comment_count does not seem to be valid for the url*/}
+        <option value="comment_count">comments</option>
       </select>
       <button
         onClick={() => {

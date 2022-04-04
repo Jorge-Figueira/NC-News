@@ -1,3 +1,7 @@
+.Body {
+  background-color: rgb(17, 69, 114);
+  font-family: myfont;
+}
 .App {
   text-align: center;
 }
@@ -7,6 +11,10 @@
   pointer-events: none;
 }
 
+@font-face {
+  font-family: myfont;
+  src: url(../rough_typewriter.otf);
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -14,16 +22,9 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  font-family: myfont;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
-
 .App-link {
   color: #61dafb;
 }
@@ -37,9 +38,30 @@
   }
 }
 
+.articles_List {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .article__card {
+  transform-style: preserve-3d;
+  border-radius: 32px;
+  box-shadow: 1px 1px 0 1px #070725, -1px 0 28px 0 rgba(34, 33, 81, 0.01),
+    28px 28px 28px 0 rgba(34, 33, 81, 0.25);
+  transition: 0.2s ease-in-out transform, 0.4s ease-in-out box-shadow;
+
+  flex-grow: 1;
   background-color: beige;
-  margin: 4px;
+  margin: 1vw;
+  width: 50%;
+  border-radius: 3vw;
+  margin-inline: 10%;
+  margin-top: 3vw;
+}
+.article__card:hover {
+  transform: translate3d(0px, -5px, 0px) rotateX(0deg) rotateZ(0deg);
+  box-shadow: 1px 1px 0 1px #03031f, -1px 0 28px 0 rgba(96, 96, 114, 0.01),
+    54px 54px 28px -10px rgba(34, 33, 81, 0.15);
 }
 
 .descriptors {
@@ -50,8 +72,9 @@
 }
 
 .descriptor_item {
-  margin: 10px;
-  font-size: 10px;
+  flex-grow: 1;
+  font-size: 1vw;
+  padding: 0.3vw;
 }
 
 .topic_link {
@@ -75,4 +98,13 @@
   background-color: rgb(199, 118, 188);
   margin: 4px;
   font-size: 12px;
+}
+
+h3 {
+  font-size: 3vw;
+  font-family: myfont;
+}
+.article_Body {
+  line-height: 2vw;
+  font-size: 1.5vw;
 }
