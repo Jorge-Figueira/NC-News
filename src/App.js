@@ -15,9 +15,15 @@ function App() {
     <BrowserRouter>
       <UserContext.Provider value={{ user, setUser }}>
         <div className="App">
-          <Link to="/user">
-            <p>{user === "" ? "Log in" : `User: ${user}`}</p>
-          </Link>
+          <button
+            className="Button"
+            onClick={() => {
+              window.location.href = "/user";
+            }}
+          >
+            {user === "" ? "Log in" : `${user}`}{" "}
+          </button>
+
           <Header />
           <Routes>
             <Route path="/" element={<PageCreator />} />

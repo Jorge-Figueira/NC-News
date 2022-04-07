@@ -19,7 +19,7 @@ export default function ArticleBody({ article }) {
   }, [likeTracker, article.article_id, vote]);
 
   return (
-    <article className="article__card">
+    <article className="article_body">
       <h3>{article.title}</h3>
       <p className="article_Body">{article.body}</p>
       <section className="descriptors">
@@ -49,24 +49,7 @@ export default function ArticleBody({ article }) {
             }
           }}
         />
-        {/* <button
-          onClick={() => {
-            if (likeTracker[0] === false) {
-              if (likeTracker[1] === false) {
-                setVote(1);
-                setLikeTracker([true, false]);
-              } else {
-                setVote(2);
-                setLikeTracker([true, false]);
-              }
-            } else {
-              setVote(-1);
-              setLikeTracker([false, false]);
-            }
-          }}
-        >
-          Like
-        </button> */}
+
         <img
           className="like_icons"
           src={likeTracker[1] === false ? unlike : unlikeHover}
@@ -86,24 +69,6 @@ export default function ArticleBody({ article }) {
             }
           }}
         />
-        {/* <button
-          onClick={() => {
-            if (likeTracker[1] === false) {
-              if (likeTracker[0] === true) {
-                setVote(-2);
-                setLikeTracker([false, true]);
-              } else {
-                setVote(-1);
-                setLikeTracker([false, true]);
-              }
-            } else {
-              setVote(1);
-              setLikeTracker([false, false]);
-            }
-          }}
-        >
-          Dislike
-        </button> */}
       </section>
     </article>
   );

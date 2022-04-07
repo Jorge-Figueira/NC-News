@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import * as api from "../../api";
+import { useNavigate } from "react-router-dom";
 
 export default function TopicsList() {
   const [topics, setTopics] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     api.fetchTopics().then((queriedTopics) => {
@@ -13,9 +15,16 @@ export default function TopicsList() {
 
   return topics.map((topic) => {
     return (
-      <Link key={topic} className="topic_link" to={`/topics/${topic}`}>
-        {topic}
-      </Link>
+      <>
+        <button
+          className="Button"
+          onClick={() => {
+            navigate(`/topics/${topic}`);
+          }}
+        >
+          {topic}
+        </button>
+      </>
     );
   });
 }

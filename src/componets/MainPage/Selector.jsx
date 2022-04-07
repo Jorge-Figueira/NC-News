@@ -1,12 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import TopicsList from "../MainPage/TopicsList";
 export default function Selector({ setSortBy, sortBy, order, setOrder }) {
   const orderToSet = order === "asc" ? "desc" : "asc";
+  const navigate = useNavigate();
   return (
     <section className="selectors">
-      <Link className="topic_link" to="/">
-        All
-      </Link>
+      <button
+        className="Button"
+        onClick={() => {
+          navigate("/");
+        }}
+      >
+        All Topics
+      </button>
+
       <TopicsList />
 
       <select
@@ -25,6 +32,7 @@ export default function Selector({ setSortBy, sortBy, order, setOrder }) {
         <option value="comment_count">comments</option>
       </select>
       <button
+        className="Button"
         onClick={() => {
           setOrder(orderToSet);
         }}
