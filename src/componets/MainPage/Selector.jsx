@@ -23,11 +23,18 @@ export default function Selector({ setSortBy, sortBy, order, setOrder }) {
           setSortBy(e.target.value);
         }}
       >
-        <option value="created_at">date</option>
-        <option value="title">title</option>
-        <option value="topic">topic</option>
-        <option value="author">author</option>
-
+        <option className="sort_by_content" value="created_at">
+          date
+        </option>
+        <option className="sort_by_content" value="title">
+          title
+        </option>
+        <option className="sort_by_content" value="topic">
+          topic
+        </option>
+        <option className="sort_by_content" value="author">
+          author
+        </option>
         <option value="votes">votes</option>
         <option value="comment_count">comments</option>
       </select>
