@@ -16,7 +16,77 @@ export default function Selector({ setSortBy, sortBy, order, setOrder }) {
 
       <TopicsList />
 
-      <select
+      <nav className="menu">
+        <input
+          type="checkbox"
+          href="#"
+          class="menu-open"
+          name="menu-open"
+          id="menu-open"
+        />
+        <label class="menu-open-button" for="menu-open">
+          <p>sort_by</p>
+          {/* <span class="lines line-1"></span>
+          <span class="lines line-2"></span>
+          <span class="lines line-3"></span> */}
+        </label>
+        <button
+          className="menu-item black"
+          onClick={() => {
+            setSortBy("created_at");
+            document.getElementById("menu-open").checked = false;
+          }}
+        >
+          date
+        </button>
+        <button
+          className="menu-item black"
+          onClick={() => {
+            setSortBy("title");
+            document.getElementById("menu-open").checked = false;
+          }}
+        >
+          title
+        </button>
+        <button
+          className="menu-item black"
+          onClick={() => {
+            setSortBy("topic");
+            document.getElementById("menu-open").checked = false;
+          }}
+        >
+          topic
+        </button>
+        <button
+          className="menu-item black"
+          onClick={() => {
+            setSortBy("author");
+            document.getElementById("menu-open").checked = false;
+          }}
+        >
+          author
+        </button>
+        <button
+          className="menu-item black"
+          onClick={() => {
+            setSortBy("votes");
+            document.getElementById("menu-open").checked = false;
+          }}
+        >
+          votes
+        </button>
+        <button
+          className="menu-item black"
+          onClick={() => {
+            setSortBy("comment_count");
+            document.getElementById("menu-open").checked = false;
+          }}
+        >
+          comments
+        </button>
+      </nav>
+
+      {/* <select
         name="sort_by"
         id="sort_by"
         onClick={(e) => {
@@ -37,7 +107,7 @@ export default function Selector({ setSortBy, sortBy, order, setOrder }) {
         </option>
         <option value="votes">votes</option>
         <option value="comment_count">comments</option>
-      </select>
+      </select> */}
       <button
         className="Button"
         onClick={() => {
