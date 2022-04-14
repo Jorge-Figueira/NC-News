@@ -10,6 +10,7 @@ import ErrorPage from "./componets/ErrorPage/ErrorPage";
 
 function App() {
   const [user, setUser] = useState("");
+  console.log(user, "<<<<<<user");
 
   return (
     <BrowserRouter>
@@ -21,7 +22,7 @@ function App() {
               window.location.href = "/user";
             }}
           >
-            {user === "" ? "Log in" : `${user}`}{" "}
+            {user === "" ? "Log in" : `${user}`}
           </button>
 
           <Header />

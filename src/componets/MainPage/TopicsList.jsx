@@ -17,7 +17,7 @@ export default function TopicsList() {
     return (
       <>
         <button
-          className="Button"
+          className="topic-item black"
           onClick={() => {
             navigate(`/topics/${topic}`);
           }}

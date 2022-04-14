@@ -1,6 +1,6 @@
 import { UserContext } from "./UserContext";
 import { useContext, useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import * as api from "../../api";
 
 export default function User() {
@@ -18,11 +18,18 @@ export default function User() {
 
   return (
     <section>
-      <Link to="/">
-        <p>Home</p>
-      </Link>
+      <button
+        className="Button"
+        type="button"
+        onClick={() => {
+          navigate("/");
+        }}
+      >
+        Home
+      </button>
 
       <form
+        className="form__InputUser"
         onSubmit={(e) => {
           e.preventDefault();
           if (
@@ -47,9 +54,12 @@ export default function User() {
           }}
         />
         <p>{notUserMessage}</p>
-        <button type="submit">Submit</button>
+        <button className="Button" type="submit">
+          Submit
+        </button>
       </form>
       <button
+        className="Button"
         type="button"
         onClick={() => {
           setUser("");

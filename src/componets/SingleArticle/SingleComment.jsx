@@ -19,6 +19,7 @@ export default function SingleComment({ comment }) {
             </p>
             {user === comment.author && (
               <button
+                className="Button"
                 onClick={(e) => {
                   e.preventDefault();
                   api.deleteComment(comment.comment_id);
