@@ -7,6 +7,7 @@ import "./App.css";
 import { UserContext } from "./componets/User/UserContext";
 import { useState } from "react";
 import ErrorPage from "./componets/ErrorPage/ErrorPage";
+import UserButton from "./componets/User/UserButton";
 
 function App() {
   const [user, setUser] = useState("");
@@ -16,14 +17,15 @@ function App() {
     <BrowserRouter>
       <UserContext.Provider value={{ user, setUser }}>
         <div className="App">
-          <button
+          {/* <button
             className="Button"
             onClick={() => {
               window.location.href = "/user";
             }}
           >
             {user === "" ? "Log in" : `${user}`}
-          </button>
+          </button> */}
+          <UserButton />
 
           <Header />
           <Routes>
