@@ -12,10 +12,17 @@ export default function SingleComment({ comment }) {
         <article key={comment.comment_id} className="comment__card">
           <p>{comment.body} </p>
           <section className="descriptors">
-            <p className="descriptor_item">Author: {comment.author}</p>
-            <p className="descriptor_item">Votes: {comment.votes}</p>
             <p className="descriptor_item">
-              Date: {comment.created_at.slice(0, 10)}
+              Author: <br />
+              {comment.author}
+            </p>
+            <p className="descriptor_item">
+              Votes: <br />
+              {comment.votes}
+            </p>
+            <p className="descriptor_item">
+              Date: <br />
+              {comment.created_at.slice(0, 10)}
             </p>
             {user === comment.author && (
               <button
