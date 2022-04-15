@@ -15,16 +15,16 @@ export default function TopicsList() {
 
   return topics.map((topic) => {
     return (
-      <>
-        <button
-          className="topic-item black"
-          onClick={() => {
-            navigate(`/topics/${topic}`);
-          }}
-        >
-          {topic}
-        </button>
-      </>
+      <button
+        className="topic-item black"
+        key={topic}
+        onClick={() => {
+          navigate(`/topics/${topic}`);
+          document.getElementById("topic-open").checked = false;
+        }}
+      >
+        {topic}
+      </button>
     );
   });
 }

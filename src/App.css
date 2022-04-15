@@ -35,6 +35,7 @@
   border-radius: 3vw;
   margin-inline: 10%;
   margin-top: 3vw;
+  cursor: pointer;
 }
 .article__card:hover {
   transform: translate3d(0px, -5px, 0px) rotateX(0deg) rotateZ(0deg);
@@ -105,6 +106,7 @@ h3 {
   height: 2.5vw;
   width: 2.5vw;
   padding: 0.6vw;
+  cursor: pointer;
 }
 .article_body {
   background-color: #a49b84;
@@ -182,6 +184,9 @@ h3 {
 }
 #Enter_username {
   color: white;
+}
+#user_login {
+  color: #a49b84;
 }
 
 /* ......................................................................................................... */

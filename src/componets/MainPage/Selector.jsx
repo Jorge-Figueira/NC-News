@@ -9,17 +9,18 @@ export default function Selector({ setSortBy, order, setOrder }) {
         <input
           type="checkbox"
           href="#"
-          class="topic-open"
+          className="topic-open"
           name="topic-open"
           id="topic-open"
         />
-        <label class="topic-open-button" for="topic-open">
+        <label className="topic-open-button" htmlFor="topic-open">
           <p>topics</p>
         </label>
         <button
           className="topic-item black"
           onClick={() => {
             navigate("/");
+            document.getElementById("topic-open").checked = false;
           }}
         >
           All Topics
@@ -38,11 +39,11 @@ export default function Selector({ setSortBy, order, setOrder }) {
         <input
           type="checkbox"
           href="#"
-          class="menu-open"
+          className="menu-open"
           name="menu-open"
           id="menu-open"
         />
-        <label class="menu-open-button" for="menu-open">
+        <label className="menu-open-button" htmlFor="menu-open">
           <p>sort_by</p>
         </label>
         <button

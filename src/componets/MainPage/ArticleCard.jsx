@@ -21,11 +21,27 @@ export default function ArticleCard({
       <h3>{title}</h3>
 
       <section className="descriptors">
-        <p className="descriptor_item">Topic: {topic}</p>
-        <p className="descriptor_item">Author: {author}</p>
-        <p className="descriptor_item">Votes: {votes}</p>
-        <p className="descriptor_item">Comments: {comment_count}</p>
-        <p className="descriptor_item">Date: {usefulDate}</p>
+        {" "}
+        <p className="descriptor_item">
+          Author: <br />
+          {author}
+        </p>
+        <p className="descriptor_item">
+          Topic: <br />
+          {topic}
+        </p>
+        <p className="descriptor_item">
+          Votes: <br />
+          {votes}
+        </p>
+        <p className="descriptor_item">
+          Comments: <br />
+          {comment_count}
+        </p>
+        <p className="descriptor_item">
+          Date: <br />
+          {usefulDate}
+        </p>
       </section>
     </article>
   );

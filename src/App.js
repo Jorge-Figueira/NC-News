@@ -1,5 +1,5 @@
 import Header from "./componets/MainPage/Header";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PageCreator from "./componets/MainPage/PageCreator";
 import SingleArticle from "./componets/SingleArticle/SingleArticle";
 import User from "./componets/User/User";
@@ -11,20 +11,11 @@ import UserButton from "./componets/User/UserButton";
 
 function App() {
   const [user, setUser] = useState("");
-  console.log(user, "<<<<<<user");
 
   return (
     <BrowserRouter>
       <UserContext.Provider value={{ user, setUser }}>
         <div className="App">
-          {/* <button
-            className="Button"
-            onClick={() => {
-              window.location.href = "/user";
-            }}
-          >
-            {user === "" ? "Log in" : `${user}`}
-          </button> */}
           <UserButton />
 
           <Header />

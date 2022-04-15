@@ -27,7 +27,6 @@ export default function User() {
       >
         Home
       </button>
-
       <form
         className="form__InputUser"
         onSubmit={(e) => {
@@ -58,15 +57,6 @@ export default function User() {
           Submit
         </button>
       </form>
-      <button
-        className="Button"
-        type="button"
-        onClick={() => {
-          setUser("");
-        }}
-      >
-        Log out
-      </button>
     </section>
   );
 }
