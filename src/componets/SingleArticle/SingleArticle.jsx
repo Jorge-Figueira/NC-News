@@ -4,12 +4,14 @@ import ArticleBody from "./ArticleBody";
 import CommentsList from "./CommentsList";
 import * as api from "../../api";
 import CommentBox from "../CommentBox/CommentBox";
+import { useNavigate } from "react-router-dom";
 
 export default function SingleArticle() {
   const { article_id } = useParams();
   const [article, setArticle] = useState({});
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(0);
+  const navigate = useNavigate();
   useEffect(() => {
     api.fetchArticleById(article_id).then((article) => {
       setArticle(article);
@@ -23,11 +25,16 @@ export default function SingleArticle() {
 
   if (isLoading < 2) return <p>....loading</p>;
   return (
-    //<SingleArtNav />
     <section>
-      <Link className="Home_Link" to="/">
+      <button
+        className="Button"
+        type="button"
+        onClick={() => {
+          navigate("/");
+        }}
+      >
         Home
-      </Link>
+      </button>
       <ArticleBody article={article} />
       <CommentBox article_id={article_id} />
       <CommentsList comments={comments} />

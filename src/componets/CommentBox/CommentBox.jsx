@@ -27,10 +27,12 @@ export default function CommentBox({ article_id }) {
                 }
               }}
             >
-              <label> Write a comment</label>
+              <label id="write_comment_label"> Write a comment</label>
 
               <textarea
-                cols="40"
+                className="text_area"
+                placeholder="You can write your comment here. Just remember to be polite"
+                cols="70"
                 rows="5"
                 value={comment}
                 onChange={(e) => {
@@ -38,37 +40,46 @@ export default function CommentBox({ article_id }) {
                   setComment(e.target.value);
                 }}
               ></textarea>
-              <button type="submit">Preview</button>
-              <button
-                type="button"
-                onClick={() => {
-                  setComment("");
-                }}
-              >
-                Delete
-              </button>
+              <section className="comments_buttons">
+                <button className="Button" type="submit">
+                  Preview
+                </button>
+                <button
+                  className="Button"
+                  type="button"
+                  onClick={() => {
+                    setComment("");
+                  }}
+                >
+                  Delete
+                </button>
+              </section>
             </form>
           )}
           {params && sent === false && (
             <section className="comment_stage">
               <h3>Are you sure that you want to submit?</h3>
-              <article>{params.body}</article>
-              <button
-                type="submit"
-                onClick={() => {
-                  api.postComment(params, article_id);
-                  setSent(true);
-                }}
-              >
-                Submit
-              </button>
-              <button
-                onClick={() => {
-                  setParams(false);
-                }}
-              >
-                Edit
-              </button>
+              <article id="preview_article">{params.body}</article>
+              <section className="comments_buttons">
+                <button
+                  className="Button"
+                  type="submit"
+                  onClick={() => {
+                    api.postComment(params, article_id);
+                    setSent(true);
+                  }}
+                >
+                  Submit
+                </button>
+                <button
+                  className="Button"
+                  onClick={() => {
+                    setParams(false);
+                  }}
+                >
+                  Edit
+                </button>
+              </section>
             </section>
           )}
           {sent === true && <p className="comment_stage">Comment Sent</p>}

@@ -1,5 +1,5 @@
 import Header from "./componets/MainPage/Header";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PageCreator from "./componets/MainPage/PageCreator";
 import SingleArticle from "./componets/SingleArticle/SingleArticle";
 import User from "./componets/User/User";
@@ -7,6 +7,7 @@ import "./App.css";
 import { UserContext } from "./componets/User/UserContext";
 import { useState } from "react";
 import ErrorPage from "./componets/ErrorPage/ErrorPage";
+import UserButton from "./componets/User/UserButton";
 
 function App() {
   const [user, setUser] = useState("");
@@ -15,9 +16,8 @@ function App() {
     <BrowserRouter>
       <UserContext.Provider value={{ user, setUser }}>
         <div className="App">
-          <Link to="/user">
-            <p>{user === "" ? "Log in" : `User: ${user}`}</p>
-          </Link>
+          <UserButton />
+
           <Header />
           <Routes>
             <Route path="/" element={<PageCreator />} />
