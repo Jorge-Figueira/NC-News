@@ -26,12 +26,25 @@ export default function ArticleBody({ article }) {
       <h3>{article.title}</h3>
       <p className="article_Body">{article.body}</p>
       <section className="descriptors">
-        <p className="descriptor_item">Topic: {article.topic}</p>
-        <p className="descriptor_item">Author: {article.author}</p>
-        <p className="descriptor_item">Votes: {renderVote}</p>
-        <p className="descriptor_item">Comments: {article.comment_count}</p>
         <p className="descriptor_item">
-          Date: {article.created_at.slice(0, 10)}
+          Topic: <br />
+          {article.topic}
+        </p>
+        <p className="descriptor_item">
+          Author: <br />
+          {article.author}
+        </p>
+        <p className="descriptor_item">
+          Votes: <br />
+          {renderVote}
+        </p>
+        <p className="descriptor_item">
+          Comments: <br />
+          {article.comment_count}
+        </p>
+        <p className="descriptor_item">
+          Date: <br />
+          {article.created_at.slice(0, 10)}
         </p>
         {user !== "" && (
           <img
