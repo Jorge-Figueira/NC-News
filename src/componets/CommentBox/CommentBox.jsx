@@ -3,11 +3,17 @@ import { useContext } from "react";
 import { UserContext } from "../User/UserContext";
 import * as api from "../../api";
 
-export default function CommentBox({ article_id }) {
+export default function CommentBox({ article_id, sent, setSent }) {
   const { user } = useContext(UserContext);
   const [comment, setComment] = useState("");
   const [params, setParams] = useState(false);
-  const [sent, setSent] = useState(false);
+  if (sent === true) {
+    setTimeout(() => {
+      setSent(false);
+      setComment("");
+      setParams(false);
+    }, 2000);
+  }
 
   useEffect(() => {}, [params, sent]);
   return (
@@ -82,7 +88,7 @@ export default function CommentBox({ article_id }) {
               </section>
             </section>
           )}
-          {sent === true && <p className="comment_stage">Comment Sent</p>}
+          {sent === true && <h2 className="comment_submited">Comment Sent</h2>}
         </section>
       )}
     </>

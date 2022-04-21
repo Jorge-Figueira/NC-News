@@ -1,9 +1,9 @@
 .Body {
-  font-family: myfont;
   background-image: url("./Icons_and_fonts/typewritter_clear.jpeg");
   background-size: auto;
   background-position: center;
   margin: auto;
+  font-family: myfont;
 }
 .App {
   text-align: center;
@@ -16,12 +16,14 @@
 }
 @font-face {
   font-family: myfont;
-  src: url(./Icons_and_fonts/rough_typewriter.otf);
+
+  src: url(./Icons_and_fonts/fonts/Bohemian\ Typewriter.ttf);
 }
 
 .App_header {
   font-size: 40px;
   color: #a49b84;
+  font-family: myfont;
 }
 
 .articles_List {
@@ -29,12 +31,6 @@
   grid-gap: 1em;
   grid-template-columns: 1fr 1fr;
   justify-content: center;
-  /* display: flex;
-  flex-wrap: wrap;
-  
-  */
-  /* justify-content: center;
-  align-content: center; */
   justify-items: center;
 }
 
@@ -97,10 +93,12 @@
   flex-direction: column;
   background-color: rgb(243, 241, 241);
   border-radius: 30px;
-  /* border-style: outset; */
 
   margin: 50px;
   font-size: 12px;
+}
+.comment_submited {
+  size: 40px;
 }
 #comments_buttons {
   display: flex;
@@ -114,7 +112,6 @@
 
 h3 {
   font-size: 22px;
-  font-family: myfont;
 }
 .article_Body {
   font-size: 15px;
