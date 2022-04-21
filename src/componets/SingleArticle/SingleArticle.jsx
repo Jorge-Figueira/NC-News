@@ -11,6 +11,7 @@ export default function SingleArticle() {
   const [article, setArticle] = useState({});
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(0);
+  const [sent, setSent] = useState(false);
   const navigate = useNavigate();
   useEffect(() => {
     api.fetchArticleById(article_id).then((article) => {
@@ -21,7 +22,7 @@ export default function SingleArticle() {
       setComments(queriedComments);
       setIsLoading((isLoading) => (isLoading += 1));
     });
-  }, [article_id]);
+  }, [article_id, sent]);
 
   if (isLoading < 2) return <p>....loading</p>;
   return (
@@ -36,8 +37,8 @@ export default function SingleArticle() {
         Home
       </button>
       <ArticleBody article={article} />
-      <CommentBox article_id={article_id} />
-      <CommentsList comments={comments} />
+      <CommentBox article_id={article_id} sent={sent} setSent={setSent} />
+      <CommentsList comments={comments} sent={sent} />
     </section>
   );
 }
